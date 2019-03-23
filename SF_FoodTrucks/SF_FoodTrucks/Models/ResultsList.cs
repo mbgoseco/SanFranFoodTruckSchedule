@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SF_FoodTrucks.Models
+﻿namespace SF_FoodTrucks.Models
 {
     public class ResultsList
     {
