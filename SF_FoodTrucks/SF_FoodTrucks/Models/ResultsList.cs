@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SF_FoodTrucks.Model
+namespace SF_FoodTrucks.Models
 {
-    public class FoodTruck
+    public class ResultsList
     {
         public string Name { get; set; }
         public string Address { get; set; }
