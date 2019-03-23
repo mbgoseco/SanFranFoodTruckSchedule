@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 using SF_FoodTrucks.Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Linq;
-using System.Globalization;
 
 namespace SF_FoodTrucks.Controller
 {
