@@ -35,16 +35,16 @@ namespace SF_FoodTrucks.Controller
             {
                 FoodTrucks.Rootobject list = JsonConvert.DeserializeObject<FoodTrucks.Rootobject>(await response.Content.ReadAsStringAsync());
 
-                var query = from n in list.features
-                                 select n.properties;
+                var query = from n in list.Features
+                                 select n.Properties;
 
                 var openFoodTrucks = await FilterOpenFoodTrucks(query);
 
                 foreach (var item in openFoodTrucks)
                 {
                     ResultsList foodTruck = new ResultsList();
-                    foodTruck.Name = item.applicant;
-                    foodTruck.Address = item.location;
+                    foodTruck.Name = item.Applicant;
+                    foodTruck.Address = item.Location;
                     results.Add(foodTruck);
                 }
             }
@@ -64,24 +64,25 @@ namespace SF_FoodTrucks.Controller
                 $"{DateTime.Now.TimeOfDay.Minutes.ToString("00.##")}";
 
 
-            IEnumerable<FoodTrucks.Properties1> filterByOpenDay = list.Where(t => t.dayofweekstr.ToUpper() == DateTime.Today.DayOfWeek.ToString().ToUpper());
+            IEnumerable<FoodTrucks.Properties1> filterByOpenDay = list.Where(t => t.Dayofweekstr.ToUpper() == DateTime.Today.DayOfWeek.ToString().ToUpper());
             foreach (var item in filterByOpenDay)
             {
+                // Convert opening, closing, and current time into comparable integers
                 string open = "";
-                for (int i = 0; i < item.start24.Length; i++)
+                for (int i = 0; i < item.Start24.Length; i++)
                 {
-                    if (item.start24[i] != ':')
+                    if (item.Start24[i] != ':')
                     {
-                        open += item.start24[i];
+                        open += item.Start24[i];
                     }
                 }
 
                 string closed = "";
-                for (int i = 0; i < item.end24.Length; i++)
+                for (int i = 0; i < item.End24.Length; i++)
                 {
-                    if (item.end24[i] != ':')
+                    if (item.End24[i] != ':')
                     {
-                        closed += item.end24[i];
+                        closed += item.End24[i];
                     }
                 }
 
