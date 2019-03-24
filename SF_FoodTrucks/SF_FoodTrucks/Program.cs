@@ -27,9 +27,16 @@ namespace SF_FoodTrucks
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            FoodTruckController controller = new FoodTruckController(client);
-            List<ResultsList> openFoodTrucks = await controller.GetFoodTrucks();
-            PrintList(openFoodTrucks);
+            try
+            {
+                FoodTruckController controller = new FoodTruckController(client);
+                List<ResultsList> openFoodTrucks = await controller.GetFoodTrucks();
+                PrintList(openFoodTrucks);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         /// <summary>
