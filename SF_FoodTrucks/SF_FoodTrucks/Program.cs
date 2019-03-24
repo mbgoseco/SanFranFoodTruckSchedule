@@ -41,6 +41,7 @@ namespace SF_FoodTrucks
             int counter = 0;
 
             Console.WriteLine($"{"NAME", -75} {"ADDRESS", -20}");
+            Console.WriteLine($"{"----", -75} {"-------", -20}");
 
             foreach (ResultsList item in list)
             {
