@@ -10,4 +10,4 @@ A console app built in .NET Core 2.1 which displays a list of food trucks in the
 * Once inside that folder, enter "dotnet run" in the command line which will build the project and all its dependencies and then run the application.
 
 # Screenshots
-![]()
+![Screenshot](https://github.com/mbgoseco/SanFranFoodTruckSchedule/blob/master/Assets/Screenshot.PNG)
